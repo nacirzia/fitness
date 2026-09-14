@@ -1,13 +1,23 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const DEFAULT_API = 'https://fitness.technativelabs.com/wp-json/uptown-app/v1';
+export const DEFAULT_API = 'https://fitness.technativelabs.com/wp-json/uptown-app/v1';
+
+function isUnusableApi(url) {
+  return !url || /10\.0\.2\.2|127\.0\.0\.1|localhost/i.test(url);
+}
 
 export async function getApiBase() {
-  return (await AsyncStorage.getItem('uf.api')) || DEFAULT_API;
+  const stored = await AsyncStorage.getItem('uf.api');
+  if (isUnusableApi(stored)) {
+    await AsyncStorage.setItem('uf.api', DEFAULT_API);
+    return DEFAULT_API;
+  }
+  return stored.replace(/\/$/, '');
 }
 
 export async function setApiBase(url) {
-  await AsyncStorage.setItem('uf.api', url.replace(/\/$/, ''));
+  const clean = (url || DEFAULT_API).replace(/\/$/, '');
+  await AsyncStorage.setItem('uf.api', isUnusableApi(clean) ? DEFAULT_API : clean);
 }
 
 export async function api(path, { method = 'GET', body, token } = {}) {
