@@ -77,12 +77,11 @@ class Uptown_Chatbot_Settings {
 	}
 
 	public static function assets( $hook ) {
-		if ( 'toplevel_page_uptown-chatbot' !== $hook ) {
+		$page = isset( $_GET['page'] ) ? sanitize_key( wp_unslash( $_GET['page'] ) ) : '';
+		if ( 'toplevel_page_uptown-chatbot' !== $hook && 'uptown-chatbot' !== $page ) {
 			return;
 		}
 
-		wp_enqueue_style( 'wp-color-picker' );
-		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_style(
 			'uptown-chatbot-admin',
 			UPTOWN_CHATBOT_URL . 'assets/css/admin.css',
@@ -92,7 +91,7 @@ class Uptown_Chatbot_Settings {
 		wp_enqueue_script(
 			'uptown-chatbot-admin',
 			UPTOWN_CHATBOT_URL . 'assets/js/admin.js',
-			array( 'jquery', 'wp-color-picker' ),
+			array( 'jquery' ),
 			UPTOWN_CHATBOT_VERSION,
 			true
 		);
@@ -185,7 +184,7 @@ class Uptown_Chatbot_Settings {
 						</p>
 						<p>
 							<label for="ucb-theme-color"><strong><?php esc_html_e( 'Color theme', 'uptown-chatbot' ); ?></strong></label><br>
-							<input id="ucb-theme-color" type="text" class="ucb-color" name="<?php echo esc_attr( self::OPTION ); ?>[theme_color]" value="<?php echo esc_attr( $s['theme_color'] ); ?>">
+							<input id="ucb-theme-color" type="color" class="ucb-color" name="<?php echo esc_attr( self::OPTION ); ?>[theme_color]" value="<?php echo esc_attr( $s['theme_color'] ); ?>">
 						</p>
 						<div class="ucb-presets" role="group" aria-label="<?php esc_attr_e( 'Color presets', 'uptown-chatbot' ); ?>">
 							<?php foreach ( $presets as $hex => $label ) : ?>

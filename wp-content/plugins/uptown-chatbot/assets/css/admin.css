@@ -21,6 +21,16 @@
 	font-weight: 600;
 }
 
+.uptown-chatbot-admin .ucb-color {
+	width: 52px;
+	height: 36px;
+	padding: 2px;
+	border: 1px solid #8c8f94;
+	border-radius: 4px;
+	background: #fff;
+	cursor: pointer;
+}
+
 .uptown-chatbot-admin .ucb-presets {
 	display: flex;
 	gap: 8px;

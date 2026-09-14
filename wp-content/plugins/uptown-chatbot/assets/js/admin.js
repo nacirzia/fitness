@@ -7,19 +7,20 @@
 		var $name = $('#ucb-bot-name');
 		var $bar = $('.ucb-preview__bar');
 
-		$color.wpColorPicker({
-			change: function (event, ui) {
-				$preview.css('--ucb-theme', ui.color.toString());
-			},
-			clear: function () {
-				$preview.css('--ucb-theme', '#f53c0f');
+		function applyColor(hex) {
+			if (!hex) {
+				hex = '#f53c0f';
 			}
+			$color.val(hex);
+			$preview.css('--ucb-theme', hex);
+		}
+
+		$color.on('input change', function () {
+			applyColor($(this).val());
 		});
 
 		$('.ucb-preset').on('click', function () {
-			var hex = $(this).data('color');
-			$color.wpColorPicker('color', hex);
-			$preview.css('--ucb-theme', hex);
+			applyColor($(this).data('color'));
 		});
 
 		$name.on('input', function () {
