@@ -1,0 +1,10 @@
+wp-config.php
+node_modules/
+.expo/
+android/
+ios/
+dist/
+*.apk
+.DS_Store
+wp-content/uploads/
+wp-content/cache/

@@ -1,0 +1,82 @@
+.uptown-chatbot-admin .ucb-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 18px;
+	margin: 20px 0;
+}
+
+.uptown-chatbot-admin .ucb-card {
+	padding: 20px 22px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.04);
+}
+
+.uptown-chatbot-admin .ucb-switch {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 12px 0 20px;
+	font-weight: 600;
+}
+
+.uptown-chatbot-admin .ucb-presets {
+	display: flex;
+	gap: 8px;
+	margin: 8px 0 16px;
+}
+
+.uptown-chatbot-admin .ucb-preset {
+	width: 28px;
+	height: 28px;
+	padding: 0;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background: var(--ucb-preset);
+	box-shadow: 0 0 0 1px #c3c4c7;
+	cursor: pointer;
+}
+
+.uptown-chatbot-admin .ucb-preview {
+	overflow: hidden;
+	border-radius: 12px;
+	border: 1px solid #dcdcde;
+	background: #f6f7f7;
+}
+
+.uptown-chatbot-admin .ucb-preview__bar {
+	padding: 12px;
+	background: var(--ucb-theme);
+	color: #fff;
+	font-weight: 700;
+	text-align: center;
+}
+
+.uptown-chatbot-admin .ucb-preview__bubble {
+	margin: 16px;
+	padding: 10px 12px;
+	background: #fff;
+	border-radius: 12px;
+	max-width: 80%;
+}
+
+.uptown-chatbot-admin .ucb-preview__dot {
+	width: 36px;
+	height: 36px;
+	margin: 0 16px 16px auto;
+	border-radius: 50%;
+	background: var(--ucb-theme);
+}
+
+.uptown-chatbot-admin .ucb-test-result {
+	margin-left: 10px;
+	font-weight: 600;
+}
+
+.uptown-chatbot-admin .ucb-test-result.is-ok { color: #008a20; }
+.uptown-chatbot-admin .ucb-test-result.is-err { color: #d63638; }
+
+@media (max-width: 960px) {
+	.uptown-chatbot-admin .ucb-grid { grid-template-columns: 1fr; }
+}

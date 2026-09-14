@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Uptown Fitness",
+    "slug": "uptown-fitness",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#09090b"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "de.uptownfitness.app"
+    },
+    "android": {
+      "package": "de.uptownfitness.app",
+      "usesCleartextTraffic": true,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#09090b"
+      }
+    },
+    "extra": {
+      "apiUrl": "http://10.0.2.2/uptownfitness/wp-json/uptown-app/v1"
+    },
+    "plugins": [
+      "expo-asset"
+    ]
+  }
+}
