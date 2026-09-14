@@ -1,6 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const DEFAULT_API = 'http://10.0.2.2/uptownfitness/wp-json/uptown-app/v1';
+const DEFAULT_API = 'https://fitness.technativelabs.com/wp-json/uptown-app/v1';
 
 export async function getApiBase() {
   return (await AsyncStorage.getItem('uf.api')) || DEFAULT_API;

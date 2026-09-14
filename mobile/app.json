@@ -24,7 +24,7 @@
       }
     },
     "extra": {
-      "apiUrl": "http://10.0.2.2/uptownfitness/wp-json/uptown-app/v1"
+      "apiUrl": "https://fitness.technativelabs.com/wp-json/uptown-app/v1"
     },
     "plugins": [
       "expo-asset"
