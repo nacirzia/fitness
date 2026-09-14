@@ -1,9 +1,9 @@
 wp-config.php
 node_modules/
 .expo/
-android/
-ios/
-dist/
+mobile/android/
+mobile/ios/
+mobile/dist/
 *.apk
 .DS_Store
 wp-content/uploads/
