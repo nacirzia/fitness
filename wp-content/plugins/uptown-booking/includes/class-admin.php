@@ -205,7 +205,9 @@ class Uptown_Booking_Admin {
 		echo '<input type="hidden" name="action" value="uptown_booking_save_settings">';
 		self::field( 'min_notice_hours', 'Minimum notice (hours)', $s['min_notice_hours'], 'number' );
 		self::field( 'max_days_ahead', 'Bookable days ahead', $s['max_days_ahead'], 'number' );
-		echo '<p class="description">Timezone follows WordPress: ' . esc_html( wp_timezone_string() ) . '</p>';
+		self::field( 'from_name', 'Email from name', $s['from_name'] );
+		self::field( 'from_email', 'Email from address', $s['from_email'], 'email' );
+		echo '<p class="description">Booking mail is sent as this name and address instead of wordpress@… Timezone: ' . esc_html( wp_timezone_string() ) . '</p>';
 		submit_button( 'Save settings' );
 		echo '</form></div>';
 	}
@@ -309,6 +311,8 @@ class Uptown_Booking_Admin {
 			array(
 				'min_notice_hours' => max( 0, (int) ( $_POST['min_notice_hours'] ?? 2 ) ),
 				'max_days_ahead'   => max( 1, (int) ( $_POST['max_days_ahead'] ?? 28 ) ),
+				'from_name'        => sanitize_text_field( wp_unslash( $_POST['from_name'] ?? 'Uptown Fitness' ) ),
+				'from_email'       => sanitize_email( wp_unslash( $_POST['from_email'] ?? 'fitness@technativelabs.com' ) ) ?: 'fitness@technativelabs.com',
 			)
 		);
 		wp_safe_redirect( admin_url( 'admin.php?page=uptown-booking-settings&saved=1' ) );

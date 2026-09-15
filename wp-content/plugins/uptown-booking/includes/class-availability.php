@@ -10,6 +10,8 @@ class Uptown_Booking_Availability {
 		$defaults = array(
 			'min_notice_hours' => 2,
 			'max_days_ahead'   => 28,
+			'from_name'        => 'Uptown Fitness',
+			'from_email'       => 'fitness@technativelabs.com',
 		);
 		$saved = get_option( 'uptown_booking_settings', array() );
 		return wp_parse_args( is_array( $saved ) ? $saved : array(), $defaults );

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Uptown Booking
  * Description: Calendly-style appointment booking on your site. Visitors pick an agenda, a team member, and a time slot.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Uptown Fitness
  * Text Domain: uptown-booking
  * Requires at least: 6.0
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'UPTOWN_BOOKING_VERSION', '1.0.0' );
+define( 'UPTOWN_BOOKING_VERSION', '1.0.1' );
 define( 'UPTOWN_BOOKING_FILE', __FILE__ );
 define( 'UPTOWN_BOOKING_DIR', plugin_dir_path( __FILE__ ) );
 define( 'UPTOWN_BOOKING_URL', plugin_dir_url( __FILE__ ) );

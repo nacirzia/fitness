@@ -219,3 +219,14 @@ function uptown_handle_contact() {
 }
 add_action( 'admin_post_nopriv_uptown_contact', 'uptown_handle_contact' );
 add_action( 'admin_post_uptown_contact', 'uptown_handle_contact' );
+
+function uptown_mail_from() {
+	return 'fitness@technativelabs.com';
+}
+
+function uptown_mail_from_name() {
+	return 'Uptown Fitness';
+}
+
+add_filter( 'wp_mail_from', 'uptown_mail_from' );
+add_filter( 'wp_mail_from_name', 'uptown_mail_from_name' );
