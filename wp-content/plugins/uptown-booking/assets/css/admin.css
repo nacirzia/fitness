@@ -1,0 +1,21 @@
+.ubk-admin-grid {
+	display: grid;
+	grid-template-columns: minmax(280px, 420px) 1fr;
+	gap: 20px;
+	align-items: start;
+}
+
+.ubk-admin .ubk-card {
+	padding: 18px 20px 8px;
+	background: #fff;
+	border: 1px solid #dcdcde;
+	border-radius: 8px;
+}
+
+.ubk-admin .ubk-card h2 {
+	margin-top: 0;
+}
+
+@media (max-width: 960px) {
+	.ubk-admin-grid { grid-template-columns: 1fr; }
+}

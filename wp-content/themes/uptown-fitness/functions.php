@@ -127,6 +127,9 @@ function uptown_inject_content_images( $content ) {
 	if ( is_admin() || ! is_singular() || is_front_page() ) {
 		return $content;
 	}
+	if ( has_shortcode( $content, 'uptown_booking' ) || false !== stripos( $content, 'class="ubk"' ) ) {
+		return $content;
+	}
 	if ( false !== stripos( $content, '<img' ) ) {
 		return $content;
 	}
