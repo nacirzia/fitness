@@ -75,13 +75,17 @@
 
 	function renderChips() {
 		chipsEl.innerHTML = '';
-		t().chips.forEach(function (label) {
+		chipsEl.hidden = false;
+		t().chips.forEach(function (chip) {
+			var label = typeof chip === 'string' ? chip : chip.label;
+			var message = typeof chip === 'string' ? chip : (chip.message || chip.label);
 			var btn = document.createElement('button');
 			btn.type = 'button';
 			btn.className = 'ucb-chip';
 			btn.textContent = label;
+			btn.title = message;
 			btn.addEventListener('click', function () {
-				sendMessage(label);
+				sendMessage(message);
 			});
 			chipsEl.appendChild(btn);
 		});
@@ -113,7 +117,7 @@
 		saveState();
 		messagesEl.innerHTML = '';
 		addBubble('bot', welcomeText());
-		chipsEl.hidden = false;
+		renderChips();
 	}
 
 	function openPanel() {
@@ -142,7 +146,6 @@
 		}
 
 		inputEl.value = '';
-		chipsEl.hidden = true;
 		addBubble('user', value);
 		state.history = state.history || [];
 		state.history.push({ role: 'user', text: value });
@@ -198,7 +201,6 @@
 		state.history.forEach(function (item) {
 			addBubble(item.role === 'user' ? 'user' : 'bot', item.text);
 		});
-		chipsEl.hidden = true;
 	}
 
 	if (state.tipDismissed) {

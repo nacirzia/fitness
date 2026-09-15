@@ -168,20 +168,27 @@
 }
 
 .ucb-chips {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	gap: 8px;
-	padding: 6px 16px 14px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 6px;
+	flex: 0 0 auto;
+	padding: 6px 12px 10px;
 }
 
 .ucb-chip {
-	padding: 8px 14px;
+	min-width: 0;
+	padding: 6px 8px;
 	border: 1px solid #d7dbe0;
-	border-radius: 22px;
+	border-radius: 14px;
 	background: #fff;
 	color: var(--ucb-theme);
-	font-size: 13px;
+	font-size: 11px;
+	line-height: 1.25;
+	font-weight: 600;
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	cursor: pointer;
 }
 

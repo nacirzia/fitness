@@ -125,10 +125,10 @@ class Uptown_Chatbot_Frontend {
 				'close'      => 'Chat schließen',
 				'reset'      => 'Neuer Chat',
 				'chips'      => array(
-					'Was kostet die Mitgliedschaft?',
-					'Wann hat der Club geöffnet?',
-					'Wie buche ich ein Probetraining?',
-					'Ich habe eine andere Frage',
+					array( 'label' => 'Preise', 'message' => 'Was kostet die Mitgliedschaft?' ),
+					array( 'label' => 'Öffnungszeiten', 'message' => 'Wann hat der Club geöffnet?' ),
+					array( 'label' => 'Probetraining', 'message' => 'Wie buche ich ein Probetraining?' ),
+					array( 'label' => 'Andere Frage', 'message' => 'Ich habe eine andere Frage' ),
 				),
 			),
 			'en' => array(
@@ -144,10 +144,10 @@ class Uptown_Chatbot_Frontend {
 				'close'      => 'Close chat',
 				'reset'      => 'New chat',
 				'chips'      => array(
-					'What does membership cost?',
-					'When is the gym open?',
-					'How do I book a trial?',
-					'I have a different question',
+					array( 'label' => 'Membership cost', 'message' => 'What does membership cost?' ),
+					array( 'label' => 'Gym hours', 'message' => 'When is the gym open?' ),
+					array( 'label' => 'Book a trial', 'message' => 'How do I book a trial?' ),
+					array( 'label' => 'Other question', 'message' => 'I have a different question' ),
 				),
 			),
 		);
