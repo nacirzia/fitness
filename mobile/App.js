@@ -11,6 +11,7 @@ import PlanScreen from './src/screens/PlanScreen';
 import DayScreen from './src/screens/DayScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { colors } from './src/theme';
 
 const Stack = createNativeStackNavigator();
 const Tabs = createBottomTabNavigator();
